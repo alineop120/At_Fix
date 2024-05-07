@@ -11,9 +11,9 @@ package locavei_gt02;
 
 public class Entrega {
     // Atributos
-    int codEntrega; // Código da entrega
-    int kmFim; // Quilometragem final do veículo
-    LocalDate data; // Data de entrega
+    private int codEntrega; // Código da entrega
+    private int kmFim; // Quilometragem final do veículo
+    private LocalDate data; // Data de entrega
     
     Scanner entrada = new Scanner(System.in); // Objeto Scanner para entrada do usuário
     DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy"); // Formato de data
@@ -43,6 +43,10 @@ public class Entrega {
         {
             System.out.println("Formato de data inválido."); // Exibe mensagem de erro se o formato for inválido
         }
+    }
+    
+    public int getCodEntraga(){
+        return this.codEntrega;
     }
     
     public void mostra(){
