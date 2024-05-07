@@ -5,25 +5,27 @@
  */
 package locavei_gt02;
 
+    import java.time.LocalDate;
+    import java.time.format.DateTimeFormatter;
     import java.util.Scanner;
 
 public class Entrega {
     // Atributos
     private int codEntrega; // Código da entrega
     private int kmFim; // Quilometragem final do veículo
-    private String data; // Data de entrega
+    private LocalDate data; // Data de entrega
     
     Scanner entrada = new Scanner(System.in); // Objeto Scanner para entrada do usuário
 
     // Construtor
-    public Entrega(int codEntrega, int kmFim, String data){
+    public Entrega(int codEntrega, int kmFim){
         this.codEntrega= codEntrega;
         this.kmFim = kmFim;
         this.data = data;
     }
     
     // Métodos
-    public void cadastro(){
+    public void cadastro(DateTimeFormatter dateFormatter){
         // Cadastrar os detalhes da entrega
         // Solicita e lê o código do veículo
         System.out.println("----- INFORMAÇÕES SOBRE O CADASTRO -----");
@@ -36,7 +38,16 @@ public class Entrega {
         
         // Solicita e lê a data de entrega como string
         System.out.println("Informe a data de entrega (dd/MM/yyyy): ");
-        data = entrada.nextLine(); 
+        String dataString = entrada.next(); 
+        // Converte a string para LocalDate
+        try 
+        {
+            data = LocalDate.parse(dataString, dateFormatter); 
+        } 
+        catch (Exception e) 
+        {
+            System.out.println("Formato de data inválido."); // Exibe mensagem de erro se o formato for inválido
+        }
     }
     
     public void mostra(){
@@ -58,7 +69,7 @@ public class Entrega {
         return this.kmFim;
     }
     
-    public String getData(){
+    public LocalDate getData(){
         return this.data;
     }
     
@@ -70,7 +81,7 @@ public class Entrega {
         this.kmFim = kmFim;
     }
     
-    public void setData(String data){
+    public void setData(){
         this.data = data;
     }
     
