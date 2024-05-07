@@ -17,7 +17,7 @@ public class TesteEntrega {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Entrega ent = new Entrega();
+        Entrega ent = new Entrega(0,0,"");
         ent.cadastro();
         ent.mostra();
     }

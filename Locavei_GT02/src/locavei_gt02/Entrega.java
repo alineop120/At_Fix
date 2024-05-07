@@ -5,23 +5,26 @@
  */
 package locavei_gt02;
 
-    import java.time.LocalDate;
-    import java.time.format.DateTimeFormatter;
     import java.util.Scanner;
 
 public class Entrega {
     // Atributos
     private int codEntrega; // Código da entrega
     private int kmFim; // Quilometragem final do veículo
-    private LocalDate data; // Data de entrega
+    private String data; // Data de entrega
     
     Scanner entrada = new Scanner(System.in); // Objeto Scanner para entrada do usuário
-    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy"); // Formato de data
 
+    // Construtor
+    public Entrega(int codEntrega, int kmFim, String data){
+        this.codEntrega= codEntrega;
+        this.kmFim = kmFim;
+        this.data = data;
+    }
+    
     // Métodos
     public void cadastro(){
-        // Método para cadastrar os detalhes da entrega
-        
+        // Cadastrar os detalhes da entrega
         // Solicita e lê o código do veículo
         System.out.println("----- INFORMAÇÕES SOBRE O CADASTRO -----");
         System.out.println("Informe código do veiculo: ");
@@ -33,20 +36,7 @@ public class Entrega {
         
         // Solicita e lê a data de entrega como string
         System.out.println("Informe a data de entrega (dd/MM/yyyy): ");
-        String dataString = entrada.next(); 
-        // Converte a string para LocalDate
-        try 
-        {
-            data = LocalDate.parse(dataString, dateFormatter); 
-        } 
-        catch (Exception e) 
-        {
-            System.out.println("Formato de data inválido."); // Exibe mensagem de erro se o formato for inválido
-        }
-    }
-    
-    public int getCodEntraga(){
-        return this.codEntrega;
+        data = entrada.nextLine(); 
     }
     
     public void mostra(){
@@ -57,7 +47,31 @@ public class Entrega {
         // Exibe a quilometragem final do veículo
         System.out.println("Quilometragem final do veiculo: "+kmFim+"km"); 
         // Exibe a data de entrega formatada
-        System.out.println("Data de entrega: " + dateFormatter.format(data)); 
+        System.out.println("Data de entrega: " +data); 
+    }
+    
+    public int getCodEntraga(){
+        return this.codEntrega;
+    }
+    
+    public int getKmFim(){
+        return this.kmFim;
+    }
+    
+    public String getData(){
+        return this.data;
+    }
+    
+    public void setCodEntraga(int codEntraga){
+        this.codEntrega = codEntrega;
+    }
+    
+    public void setKmFim(int kmFim){
+        this.kmFim = kmFim;
+    }
+    
+    public void setData(String data){
+        this.data = data;
     }
     
 }
