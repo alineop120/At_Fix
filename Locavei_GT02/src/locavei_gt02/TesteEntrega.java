@@ -15,13 +15,17 @@ import java.time.format.DateTimeFormatter;
  */
 public class TesteEntrega {
 
-    /**
-     * @param args the command line arguments
-     */
     public static void main(String[] args) {
-        Entrega ent = new Entrega(0,0);
-        ent.cadastro(DateTimeFormatter dateFormatter);
+        // Define um DateTimeFormatter
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+        
+        // Cria um objeto Entrega
+        Entrega ent = new Entrega(0, 0, "");
+        
+        // Chama o método cadastro e passa o DateTimeFormatter
+        ent.cadastro(dateFormatter);
+        
+        // Chama o método mostra para exibir os detalhes
         ent.mostra();
     }
-    
 }
