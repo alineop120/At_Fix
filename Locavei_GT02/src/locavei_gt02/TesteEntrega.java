@@ -24,7 +24,7 @@ public class TesteEntrega {
         
         // Chama o método cadastro e passa o DateTimeFormatter
         ent.cadastro(dateFormatter);
-        
+
         // Chama o método mostra para exibir os detalhes
         ent.mostra();
     }
