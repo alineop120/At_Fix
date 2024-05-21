@@ -1,6 +1,5 @@
 package atfix3un4;
 // Importar
-
 import java.util.Scanner;
 import javax.swing.JOptionPane;
 
@@ -20,7 +19,7 @@ public class Cliente {
 
     // Métodos
     public void recebe() {
-        Scanner sc = new Scanner(System.in); // declarar
+        Scanner sc = new Scanner(System.in); // Declarar
 
         System.out.println("Digite o nome do cliente: ");
         setNomeCli(sc.nextLine());
@@ -41,7 +40,6 @@ public class Cliente {
     public void mostrar() {
         JOptionPane.showMessageDialog(null, "CLIENTE: " + getNomeCli()
                 + "\nValor total da conta: " + cTotConta());
-
     }
 
     // Gerar get e set
@@ -81,7 +79,5 @@ public class Cliente {
      */
     public float getTXG() {
         return TXG;
-    }
-    
-    
+    }    
 }
