@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package atfix3;
+package atfix3un4;
 
 /**
  *
@@ -15,7 +15,10 @@ public class TesteCliente {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Cliente cli = new Cliente("");
+        cli.recebe();
+        cli.cTotConta();
+        cli.mostrar();
     }
     
 }
