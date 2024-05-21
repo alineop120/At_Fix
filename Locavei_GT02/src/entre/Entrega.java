@@ -3,8 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package locavei_gt02;
-
+package entre;
+// Importar
 import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
@@ -14,7 +14,7 @@ public class Entrega {
     private int kmFim; // Quilometragem final do veículo
     private String data; // Data de entrega como string
     
-    Scanner entrada = new Scanner(System.in);
+    Scanner entrada = new Scanner(System.in); // Declarar
 
     // Construtor
     public Entrega(int codEntrega, int kmFim, String data) {

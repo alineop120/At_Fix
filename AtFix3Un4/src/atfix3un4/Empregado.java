@@ -8,13 +8,15 @@ public class Empregado {
     private double salario, ir;
     private final float TXIR = 0.05f;
     
+    // Declarar
+    Scanner sc = new Scanner(System.in);
+    
     // Metodos
     public Empregado (String nome) {
         this.nome = nome;
     }
     
     public void recebe(){
-	Scanner sc = new Scanner(System.in);
 	System.out.println("Digite o nome do empregado: ");
 	nome = sc.nextLine();
 	System.out.println("Digite o salario do empregado: ");
