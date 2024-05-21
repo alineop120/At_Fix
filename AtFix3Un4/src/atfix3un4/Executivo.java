@@ -9,7 +9,7 @@ public class Executivo extends Empregado {
     }
     
     public void calcProducao(float txPr){
-        setComisProd(txPr * getComisProd());
+        setComisProd((float) (txPr * getSalario()));
     }
     
     public void mostra(){

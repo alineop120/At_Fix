@@ -18,43 +18,61 @@ public class Empregado {
     
     public void recebe(){
 	System.out.println("Digite o nome do empregado: ");
-	nome = sc.nextLine();
+	setNome(sc.nextLine());
 	System.out.println("Digite o salario do empregado: ");
-	salario = sc.nextDouble();
+	setSalario(sc.nextDouble());
     }
     
     public double calcIR(){
-        return ir = (float) (this.salario * TXIR);
+        return ir = (float) (this.getSalario() * TXIR);
     }
     
     public void mostra(){
-	System.out.println("NOME: "+nome+"\nSALARIO: "+salario
+	System.out.println("NOME: "+getNome()+"\nSALARIO: "+getSalario()
 	+"\nIMPOSTO DE RENDA: "+calcIR());	
     }
 
-    // Get's
-    public String getNome(){
-	return this.nome;
-    }
-    
-    public double getSalario(){
-	return this.salario;
+    /**
+     * @return the nome
+     */
+    public String getNome() {
+        return nome;
     }
 
-    public double getIR(){
-	return this.ir;
-    }
-
-    // SET's
-    public void setNome(String nome){
+    /**
+     * @param nome the nome to set
+     */
+    public void setNome(String nome) {
         this.nome = nome;
     }
 
-    public void setSalario(double salario){
+    /**
+     * @return the salario
+     */
+    public double getSalario() {
+        return salario;
+    }
+
+    /**
+     * @param salario the salario to set
+     */
+    public void setSalario(double salario) {
         this.salario = salario;
     }
-	
-    public void setIR(){
+
+    /**
+     * @return the ir
+     */
+    public double getIr() {
+        return ir;
+    }
+
+    /**
+     * @param ir the ir to set
+     */
+    public void setIr(double ir) {
         this.ir = ir;
     }
+
+    
 }
