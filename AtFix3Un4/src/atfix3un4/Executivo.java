@@ -12,6 +12,7 @@ public class Executivo extends Empregado {
         setComisProd((float) (txPr * getSalario()));
     }
     
+    @Override
     public void mostra(){
         System.out.println("VALOR COMISSÃO: " + getComisProd());
     }

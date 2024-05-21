@@ -12,6 +12,10 @@ public class Programador extends Empregado {
         this.valorHora=valorHora;
     }
     
+    /**
+     *
+     */
+    @Override
     public void recebe(){
         System.out.println("Digite a hora extra: ");
         setHorasExtra(sc.nextInt());
@@ -23,6 +27,10 @@ public class Programador extends Empregado {
         setAdicional(getValorHora() * getHorasExtra());
     } 
     
+    /**
+     *
+     */
+    @Override
     public void mostra(){
         System.out.println("ADICIONAL: " + getAdicional());
     }
