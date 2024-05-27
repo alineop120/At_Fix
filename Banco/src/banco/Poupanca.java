@@ -11,7 +11,7 @@ package banco;
  */
 public class Poupanca extends Conta
 {
-    // aTRIBUTO
+    // Atributo
     private int tempPoup;
     
     // Construtor

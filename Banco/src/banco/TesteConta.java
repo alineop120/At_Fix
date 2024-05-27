@@ -30,7 +30,10 @@ public class TesteConta {
                     cco.saca(300);
                     cco.mostra();
                 case 2: Poupanca cp = new Poupanca("", 0); 
-                    cp.
+                    cp.saca(500);
+                    cp.soma();
+                    cp.mostra();
+                    
             }
         }
     }
