@@ -3,7 +3,6 @@ package banco;
 
 import java.util.Scanner;
 
-
 public abstract class Conta {
     private String nome;
     private float saldo;
@@ -18,8 +17,7 @@ public abstract class Conta {
         System.out.print("Digite o nome do cliente:");
         nome=sc.nextLine();
         System.out.print("Digite o saldo do cliente:");
-        saldo=sc.nextFloat();
-        
+        saldo=sc.nextFloat();  
     }
     
     public abstract void saca(float sac);//assinei a regra generica
