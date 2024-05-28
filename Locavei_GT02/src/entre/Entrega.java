@@ -14,7 +14,7 @@ public class Entrega {
     private int kmFim; // Quilometragem final do veículo
     private String data; // Data de entrega como string
     
-    Scanner entrada = new Scanner(System.in); // Declarar
+    private Scanner entrada = new Scanner(System.in); // Declarar
 
     // Construtor
     public Entrega(int codEntrega, int kmFim, String data) {
@@ -29,51 +29,85 @@ public class Entrega {
         // Solicita e lê o código do veículo
         System.out.println("----- INFORMAÇÕES SOBRE O CADASTRO -----");
         System.out.println("Informe código do veiculo: ");
-        codEntrega = entrada.nextInt(); 
+        setCodEntrega(getEntrada().nextInt()); 
         
         // Solicita e lê a quilometragem final do veículo
         System.out.println("Informe a quilometragem final do veiculo: ");
-        kmFim = entrada.nextInt(); 
+        setKmFim(getEntrada().nextInt()); 
         
         // Solicita e lê a data de entrega como string
         System.out.println("Informe a data de entrega (dd/MM/yyyy): ");
-        data = entrada.next(); 
+        setData(getEntrada().next()); 
     }
     
     public void mostra() {
         // Método para mostrar os detalhes da entrega
         System.out.println("----- INFORMAÇÕES SOBRE O VEICULO DE ENTREGA -----");
         // Exibe o código do veículo
-        System.out.println("Código do Veiculo: " + codEntrega);
+        System.out.println("Código do Veiculo: " + getCodEntrega());
         // Exibe a quilometragem final do veículo
-        System.out.println("Quilometragem final do veiculo: " + kmFim + "km"); 
+        System.out.println("Quilometragem final do veiculo: " + getKmFim() + "km"); 
         // Exibe a data de entrega
-        System.out.println("Data de entrega: " + data); 
+        System.out.println("Data de entrega: " + getData()); 
     }
     
     // Getters and Setters
+
+    /**
+     * @return the codEntrega
+     */
     public int getCodEntrega() {
-        return this.codEntrega;
+        return codEntrega;
     }
-    
-    public int getKmFim() {
-        return this.kmFim;
-    }
-    
-    public String getData() {
-        return this.data;
-    }
-    
+
+    /**
+     * @param codEntrega the codEntrega to set
+     */
     public void setCodEntrega(int codEntrega) {
         this.codEntrega = codEntrega;
     }
-    
+
+    /**
+     * @return the kmFim
+     */
+    public int getKmFim() {
+        return kmFim;
+    }
+
+    /**
+     * @param kmFim the kmFim to set
+     */
     public void setKmFim(int kmFim) {
         this.kmFim = kmFim;
     }
-    
+
+    /**
+     * @return the data
+     */
+    public String getData() {
+        return data;
+    }
+
+    /**
+     * @param data the data to set
+     */
     public void setData(String data) {
         this.data = data;
     }
+
+    /**
+     * @return the entrada
+     */
+    public Scanner getEntrada() {
+        return entrada;
+    }
+
+    /**
+     * @param entrada the entrada to set
+     */
+    public void setEntrada(Scanner entrada) {
+        this.entrada = entrada;
+    }
+    
 }
 

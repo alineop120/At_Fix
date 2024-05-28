@@ -2,7 +2,7 @@ package atfix3un4;
 
 import java.util.Scanner;
 
-public class Empregado {
+public abstract class Empregado {
     // Atributos
     private String nome;
     private double salario, ir;
@@ -25,6 +25,12 @@ public class Empregado {
     
     public double calcIR(){
         return ir = (float) (this.getSalario() * TXIR);
+    }
+    
+    public abstract void bonusSalario(); //método abstrato é implemantado nas classes filhas
+    
+    public void  aumentaSalario(double s){
+        this.salario=this.salario + s;
     }
     
     public void mostra(){

@@ -1,77 +1,45 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package banco;
 
 import java.util.Scanner;
 
-/**
- *
- * @author 364975
- */
-public abstract class Conta  // A classe Conta é abstrada
-{
-    // Atritudos
-    private String nomeCli;   // nome do Cliente
-    private int numCont;     // numero da conta do cliente
+
+public abstract class Conta {
+    private String nome;
     private float saldo;
+    Scanner sc = new Scanner(System.in);
     
-    private Scanner sc = new Scanner(System.in);
-    
-    // Construtor
-    public Conta (String nome, int num){
-        this.nomeCli=nomeCli;
-        this.numCont=numCont;
+    public Conta(String nome, float saldo ){
+        this.nome=nome;
+        this.saldo=saldo;
     }
     
-    // Métodos
-    public void recebe()
-    {
-        System.out.println("Digite o nome do cliente: ");
-        setNomeCli(getSc().nextLine());
-        System.out.println("Digite o nº da conta corrente: ");
-        setNumCont(getSc().nextInt());
-        System.out.println("Digite o saldo da conta: ");
-        setSaldo(getSc().nextFloat());
+    public void recebe(){
+        System.out.print("Digite o nome do cliente:");
+        nome=sc.nextLine();
+        System.out.print("Digite o saldo do cliente:");
+        saldo=sc.nextFloat();
         
     }
-    // Abstração
-    public abstract void saca(float sac);
     
-    public void mostra()
-    {
-        System.out.println("CLIENTE> " + getNomeCli()
-                + "\nCONTA> " + getNumCont() + "SALDO> " + getSaldo());
+    public abstract void saca(float sac);//assinei a regra generica
+    
+    public void mostra(){
+        System.out.println("NOME: "+getNome()+"\nSALDO: "+getSaldo());
     }
 
     /**
-     * @return the nomeCli
+     * @return the nome
      */
-    public String getNomeCli() {
-        return nomeCli;
+    public String getNome() {
+        return nome;
     }
 
     /**
-     * @param nomeCli the nomeCli to set
+     * @param nome the nome to set
      */
-    public void setNomeCli(String nomeCli) {
-        this.nomeCli = nomeCli;
-    }
-
-    /**
-     * @return the numCont
-     */
-    public int getNumCont() {
-        return numCont;
-    }
-
-    /**
-     * @param numCont the numCont to set
-     */
-    public void setNumCont(int numCont) {
-        this.numCont = numCont;
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 
     /**
@@ -87,19 +55,6 @@ public abstract class Conta  // A classe Conta é abstrada
     public void setSaldo(float saldo) {
         this.saldo = saldo;
     }
-
-    /**
-     * @return the sc
-     */
-    public Scanner getSc() {
-        return sc;
-    }
-
-    /**
-     * @param sc the sc to set
-     */
-    public void setSc(Scanner sc) {
-        this.sc = sc;
-    }
     
+        
 }

@@ -8,12 +8,12 @@ package atfix3un4;
 import java.util.Scanner;
 
 /**
- * Instituição          Escola Técnica de Brasília - ETB
- * Nome do Curso        Curso Técnico de Informática
- * Disciplina           LTP1-Java
- * Date                 07.05.2024
- * Autores              Aline Oliveira de Pinho
- * Turma                2H
+ * Escola Técnica de Brasília - ETB
+ * Curso Técnico de Informática
+ * LTP1-Java
+ * 07.05.2024
+ * Aline Oliveira de Pinho
+ * 2H
  * Objetivo             
  */
 public class TesteEmpregado {
@@ -37,13 +37,20 @@ public class TesteEmpregado {
                     pr.recebe();
                     pr.calcIR();
                     pr.calcAdicional();
+                    pr.mostra();
+                    pr.bonusSalario();
+                    pr.calcIR();
+                    pr.mostra();
                 
                 case 2: 
                     Executivo ex = new Executivo("", 0);
                     ex.calcIR();
                     ex.calcProducao(.2f);
                     ex.mostra();
-                
+                    ex.bonusSalario();
+                    ex.calcIR();
+                    ex.mostra();
+                    
                 case 3: 
                     System.out.println("Programa encerado!");
                     System.exit(0);

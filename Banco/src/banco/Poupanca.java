@@ -1,45 +1,35 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package banco;
 
 /**
  *
- * @author 364975
+ * @author tregis
  */
-public class Poupanca extends Conta
-{
-    // Atributo
-    private int tempPoup;
+public class Poupanca extends Conta {
+    private  int tempPop;
     
-    // Construtor
-    public Poupanca (String nomeCli, int numCont, int temPoup){
-        super(nomeCli, numCont);
-        this.tempPoup=tempPoup;
+    public Poupanca(String nome, float saldo, int tempPop){
+        super(nome,saldo);
+        this.tempPop=tempPop;
     }
     
-    public void soma(float sac){
-        if (tempPoup >= 30){
-            getSaldo(getSaldo() - sac);
+    public void recebe(){
+        super.recebe();
+        System.out.println("Digite o tempo da poupanca: ");
+        tempPop=sc.nextInt();
+    }
+    
+    public void saca(float sac){
+        if (tempPop>=30){
+            setSaldo(getSaldo()-sac);
         }else{
-            System.out.println("\n Saque negado!!");
-            System.exit(0);
+            System.out.println("Sasque não permitido!!");
         }
     }
     
     public void mostra(){
         super.mostra();
-        System.out.println("SALDO> " + getSaldo());
+        System.out.println("SALDO CONTA POUPANCA: "+getSaldo());
     }
-
-    @Override
-    public void saca(float sac) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    private void getSaldo(float f) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }

@@ -25,7 +25,15 @@ public class Programador extends Empregado {
     
     public void calcAdicional(){
         setAdicional(getValorHora() * getHorasExtra());
-    } 
+    }
+    
+    /**
+     *
+     */
+    @Override
+    public void bonusSalario(){
+        super.aumentaSalario(getSalario() * 0.04);
+    }
     
     /**
      *

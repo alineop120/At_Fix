@@ -1,41 +1,43 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package banco;
 
 import java.util.Scanner;
 
-/**
- *
- * @author 364975
- */
-public class TesteConta {
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String[] args) {
+public class TesteConta {
+    
+    public static void main(String[] args) 
+    {
         boolean loop = true;
         Scanner sc = new Scanner(System.in);
-        while(loop){
-            System.out.println("MENU ->");
-            System.out.println("1} Comum");
-            System.out.println("2} Poupança");
-            System.out.println("3} Encerrar");
+        while(loop)
+        {
+            System.out.println("\nMENU -->");
+            System.out.println("1]Conta Comum");
+            System.out.println("2]Conta Poupança");
+            System.out.println("3]Encerrar");
+            System.out.print("Opção: ");
             int op = sc.nextInt();
-            switch (op){
-                case 1: Comum cco = new Comum("", 0);
-                    cco.saca(300);
-                    cco.mostra();
-                case 2: Poupanca cp = new Poupanca("", 0); 
-                    cp.saca(500);
-                    cp.soma();
-                    cp.mostra();
-                    
-            }
-        }
+            switch(op)
+            {
+                 case 1:Comum cco = new Comum("",0f);
+                 cco.recebe();
+                 cco.saca(200);
+                 cco.mostra();
+                 break;
+                 case 2:Poupanca pop = new Poupanca("",0f,0);//instanciação da classe Empregado
+                 pop.recebe();
+                 pop.saca(300);
+                 pop.mostra();
+                 break;
+                 case 3:System.out.println("\nEncerrando!");
+                 System.exit(0);
+                 break;
+                 default:System.out.println("\nOpção errada!");
+
+            } 
+        } 
     }
-    
 }
+    
+
