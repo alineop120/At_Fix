@@ -7,23 +7,24 @@ package aap2un4;
 
 /**
  *
- * @author 364975
+ * @author Aline
  */
-public class Programador extends Empregado {
+public class Gerente extends Empregado {
 
-    public Programador(String nome, double salario) {
+    public Gerente(String nome, double salario) {
         super(nome, salario);
     }
 
     @Override
     public double aumentarSalario() {
-        setSalario(getSalario() * 1.10);
+        setSalario(getSalario() * 1.15);
         return getSalario();
     }
 
     @Override
     public double aplicarBonus() {
-        setSalario(getSalario() + 500);
+        setSalario(getSalario() * 2);
         return getSalario();
     }
 }
+
